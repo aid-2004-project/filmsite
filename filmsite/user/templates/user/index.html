@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/easyfader.css">
+    <link rel="stylesheet" href="/static/css/films.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.easyfader.min.js"></script>
+    <script src="/static/js/fader.data.js"></script>
+    <script src="/static/js/index.js"></script>
+
+
+</head>
+<body>
+<div id="groundFloor">
+    <!-- 头部板块 -->
+    <header>
+        <!-- 头部板块有左中右三个小版块，左边是广告栏，中间是搜索栏，右边是登录栏 -->
+        <!--广告栏 -->
+        <div class="guide">
+                    <span class="logo">
+                        <img src="/static/images/logo.png" alt="">
+                    </span>
+
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">电影</a></li>
+                <li><a href="#">电视</a></li>
+                <li><a href="#">综艺</a></li>
+                <li><a href="#">动漫</a></li>
+            </ul>
+
+        </div>
+        <!-- 搜索栏 -->
+        <div class="search">
+            <input type="text" placeholder="请输入搜索内容：">
+        </div>
+        <!-- 登录栏 -->
+        <div id="btnLog">
+            <!-- 登录框内设置有登录和注销两个按钮 -->
+            {% if username %}
+            <span>{{ username }}</span>
+            <button id="logout"><a href="../logout/">注销</a></button>
+            {% else %}
+            <button id="login" onclick="login()">
+                <a href="#">登录</a>
+
+            </button>
+            <span>注销</span>
+            <!--        <button id="logout"><a href="../logout/">注销</a></button>-->
+            {% endif %}
+            <button id=center><a href="../usercenter">会员中心</a></button>
+        </div>
+
+    </header>
+    <main class="id" style="margin: 0 auto;">
+        <!-- 头部下面的导航 -->
+        <div class="pageguide">
+            <ul>
+                <li><a href="#">影视</a></li>
+                <li><a href="#">音乐</a></li>
+                <li><a href="#">搞笑</a></li>
+                <li><a href="#">娱乐</a></li>
+                <li><a href="#">动漫</a></li>
+                <li><a href="#">生活</a></li>
+                <li><a href="#">综艺</a></li>
+                <li><a href="#">游戏</a></li>
+                <li><a href="#">教育</a></li>
+                <li><a href="#">更多</a></li>
+            </ul>
+        </div>
+        <!-- 轮播图 -->
+        <div class="banner">
+            <ul id="fader" class="fader">
+            </ul>
+        </div>
+        <div style="height: 400px;"></div>
+
+
+        <!-- 详细展示图 -->
+
+        <div class="film-1">
+            {% for filminfo in filminfos %}
+            <!-- <h1>电 影</h1> 电影类型-->
+            <div class="onefilm" name="{{ filminfo.id }}">
+                <span><a href="/film/{{ filminfo.id }}"><img src="{{ filminfo.img }}" alt=""></a></span>
+                <p>{{ filminfo.filmname }}</p>
+            </div>
+            {% endfor %}
+            <!-- <div class="onefile">
+                <span><a href="#"><img src="/static/images/file01.jpg" alt=""></a></span>
+                <p>想哭的我</p>
+            </div>
+
+            <div class="onefile">
+                <span><a href="#"><img src="/static/images/file01.jpg" alt=""></a></span>
+                <p>想哭的我</p>
+            </div>
+
+            <div class="onefile">
+                <span><a href="#"><img src="/static/images/file01.jpg" alt=""></a></span>
+                <p>想哭的我</p>
+            </div>
+
+            <div class="onefile">
+                <span><a href="#"><img src="/static/images/file01.jpg" alt=""></a></span>
+                <p>想哭的我</p>
+            </div> -->
+        </div>
+
+
+    </main>
+
+
+    <!-- 底部 -->
+    <footer>
+        <ul>
+
+            <li>
+                <a href="#">关于我们</a>
+            </li>
+            <li>
+                <a href="#"> 联系我们</a>
+            </li>
+            <li>
+                <a href="#">帮助我们</a>
+            </li>
+            <li>
+                <a href="#">隐私政策</a>
+            </li>
+        </ul>
+
+    </footer>
+</div>
+<!-- 登录框 -->
+<div id="loginBox">
+
+    <!-- 最外层登录框 -->
+    <form action="" id="login-box" method="POST">
+        <p id="out"><img src="/static/images/out.png"></p>
+        <!-- 显示中间的加粗文字 -->
+        <span>Login</span>
+        <!-- 两个输入框的外层边框 -->
+        <div class="form">
+            <!-- 用户名输入框 -->
+            <div class="item">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="text" placeholder="用户名" name="username">
+            </div>
+            <!-- 密码输入框 -->
+            <div class="item">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <input type="password" placeholder="密码" name="pwd">
+            </div>
+        </div>
+        <!-- 登录按钮 -->
+        <button name="login" value="1">login</button>
+        <!-- 注册按钮 -->
+        <button name="register" value="1">register</button>
+    </form>
+</div>
+<div class="clear"></div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+body,ul,li{
+    margin: 0;
+    padding: o;
+}
+main{
+    display: grid;
+    grid-template-areas:
+    "pageguide"
+    "banner"
+    "flies"
+}
+
+/* 轮播图前的导航栏 */
+.pageguide{
+    margin-bottom: 10px;
+}
+.pageguide ul{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.pageguide li{
+    float: left;
+    list-style: none;
+    margin-left: 55px;
+}
+.pageguide li a{
+    text-decoration: none;
+    color:rgb(103, 103, 177);
+}
+.pageguide li a:hover{
+    color:rgb(211, 116, 116);
+}
+/* 主体部分 */
+main{
+    width: 1000px;
+    margin: 0 auto;
+}
+/* 轮播图 */
+/* .banner{
+    width: 100%;
+} */
+.fader{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.fader .slide{
+    width: 100%;
+    list-style: none;
+}
+
+.fader .slide .imginfo{
+    width: 100%;
+    position: absolute;
+    bottom:5%;
+    color: #fff;
+    font-size: 26px;
+    background-color: rgba(0,0,0,0.4);
+    padding-left:40px;
+    box-sizing: border-box;
+}
+.fader .fader_controls div{
+    position: absolute;
+    top:200px;
+    width: 50px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 100px;
+    margin-top: -40px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;/*隐藏*/
+    transition: all 0.2s;
+}
+.prev{
+    left: 50px;
+}
+.next{
+    right: 50px;
+}
+.banner:hover .fader_controls .prev{
+    opacity: 0.7;
+    left: 0;
+}
+.banner:hover .fader_controls .next{
+    opacity: 0.7;
+    right: 0;
+}
+
+/* 轮播图页标 */
+.pager_list{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    bottom: 0;
+    /* 文本居中   对行内块也有效 */
+    text-align: center;
+    right: -200px;
+}
+.pager_list li{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.pager_list li:hover{
+    opacity: 1;
+}
+
+
+
+/* 点击登录跳出登录框样式 */
+#groundFloor,#loginBox{
+    position: absolute;
+}
+#groundFloor{
+    z-index: 9;
+
+
+}
+#loginBox{
+    display: none;
+    z-index: 10;
+}
+
+.clear{
+    clear: both;
+}
+
+/*登录框的×样式设置*/
+#loginBox{
+    position: relative;
+}
+#out img{
+    position: absolute;
+    right: 0;
+    font: 100px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}

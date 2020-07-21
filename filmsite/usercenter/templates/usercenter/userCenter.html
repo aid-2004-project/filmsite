@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员中心</title>
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/center.css">
+</head>
+<body>
+<!-- 头部板块 -->
+<header>
+    <!-- 头部板块有左中右三个小版块，左边是广告栏，中间是搜索栏，右边是登录栏 -->
+    <!--广告栏 -->
+    <div class="guide">
+            <span class="logo">
+                <img src="/static/images/logo.png" alt="">
+            </span>
+
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">电影</a></li>
+            <li><a href="#">电视</a></li>
+            <li><a href="#">综艺</a></li>
+            <li><a href="#">动漫</a></li>
+        </ul>
+
+    </div>
+    <!-- 搜索栏 -->
+    <div class="search">
+        <input type="text" placeholder="请输入搜索内容：">
+    </div>
+    <!-- 登录栏 -->
+    <div id="btnLog">
+        <!-- 登录框内设置有登录和注销两个按钮 -->
+        {% if username %}
+            <span>{{ username }}</span>
+        {% else %}
+            <button id="login" onclick="login()">
+            <a href="#">登录</a>
+        {% endif %}
+        </button>
+        <button id="logout"><a href="logout">注销</a></button>
+        <button id=center><a href="#">会员中心</a></button>
+    </div>
+
+</header>
+
+<div class="blank"></div>
+
+<!-- 中间 -->
+<main>
+    <!-- 用户信息 -->
+    <div class="userinfo">
+            <span class="viplogo">
+                <img src="/static/images/vip.png" alt="">
+            </span>
+        <span class="username">此处显示会员名称</span>
+        <p class="time">超级会员 2020年7月8日</p>
+    </div>
+    <div class="blank"></div>
+
+    <!-- 中心导航 -->
+    <div class="choice">
+        <ul>
+            <li class="myinfo"><a href="#infomsg">我的信息</a></li>
+            <li class="watchRecord"><a href="#history">播放记录</a></li>
+            <li class="collectRecord"><a href="#">收藏记录</a></li>
+        </ul>
+    </div>
+
+    <div class="blank"></div>
+    <!-- 信息展示页面 -->
+
+    <div class="msgdata">
+        <div class="msgtable">
+            <table class="msg" id="infomsg">
+                <tr>
+                    <td>我的信息</td>
+                    <td class="info">基本资料</td>
+                </tr>
+                <tr>
+                    <td>用户名：</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>QQ号码：</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Email地址</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>注册时间：</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>登陆时间：</td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="history">
+            {#                    <span>该部分通过js获取</span>#}
+            {% for b in page %}
+                <a href="../film/{{ b.film__id }}">
+                    <div>{{ b.film__filmname }}</div>
+                </a>
+{#                <div>{{ b.film__id }}</div>#}
+                <div>{{ b.film__created_time }}</div>
+
+            {% endfor %}
+
+            {% if page.has_previous %}
+                <a href="?page={{ page.previous_page_number }}">上一页</a>
+            {% else %}
+                上一页
+            {% endif %}
+
+            {% for p in paginator.page_range %}
+                {% if p == page.number %}
+                    {{ p }}
+                {% else %}
+                    <a href="?page={{ p }}">{{ p }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page.has_next %}
+                <a href="?page={{ page.next_page_number }}">下一页</a>
+            {% else %}
+                下一页
+            {% endif %}
+
+        </div>
+    </div>
+
+
+</main>
+<div class="blank"></div>
+
+<!-- 底部 -->
+<footer>
+    <ul>
+
+        <li>
+            <a href="#">关于我们</a>
+        </li>
+        <li>
+            <a href="#"> 联系我们</a>
+        </li>
+        <li>
+            <a href="#">帮助我们</a>
+        </li>
+        <li>
+            <a href="#">隐私政策</a>
+        </li>
+    </ul>
+
+</footer>
+
+
+</body>
+</html>

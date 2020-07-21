@@ -1,0 +1,27 @@
+/* 电影展示页 */
+.flies-1{
+    width: 100%;
+    margin: 0 auto;
+}
+.flies-1 h1{
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.flies-1 .onefile{
+    /*height: 250px;*/
+    height: 300px;
+    width: 200px;
+    margin: 0 10px 50px 10px;
+    float: left;
+}
+.flies-1 .onefile img{
+    height: 90%;
+    width: 90%;
+}
+
+.flies-1 .onefile p{
+    text-align: center;
+    margin-top: 5px;
+}

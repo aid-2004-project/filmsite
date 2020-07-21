@@ -1,0 +1,26 @@
+/* 电影展示页 */
+.film-1{
+    width: 100%;
+    margin: 0 auto;
+}
+.film-1 h1{
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.film-1 .onefilm{
+    height: 250px;
+    width: 180px;
+    margin: 0 10px 50px 10px;
+    float: left;
+}
+.film-1 .onefilm img{
+    height: 90%;
+    width: 90%;
+}
+
+.film-1 .onefilm p{
+    text-align: center;
+    margin-top: 5px;
+}

@@ -1,0 +1,69 @@
+/* 设置登录框样式 */
+#login-box{
+    position: fixed;
+    /* 宽度是界面的30% */
+    width: 30%;
+    /* 高度根据内容自动适应 */
+    height: auto;
+    /* 登录框左右居中显示 */
+    /* margin: 0 auto; */
+    /* 显示在距离界面上边框15%的中间位置 */
+    margin: 10% 30% 10% 30%;
+    /* 文字居中显示 */
+    text-align: center;
+    /* 背景为黑色，透明度60% */
+    background:#555;
+    /* 文字颜色为白色 */
+    color: white;
+}
+#login-box span{
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+
+}
+/* 设置输入框样式 */
+#login-box .form{
+    /* 上边框距离登录框上边框50像素 */
+    margin-top: 20px;
+}
+/* 设置两个用户名和密码外层容器样式 */
+#login-box .form .item{
+    /* 距离在其之上最近的元素15px像素 */
+    margin-top: 15px;
+}
+/* 设置输入框样式 */
+#login-box .form .item input{
+    /* 去除输入框边框 */
+    border: 0;
+    /* 设置输入框宽度为200像素 */
+    width: 200px;
+    /* 设置输入框下边框宽2像素，实线，白色 */
+    border-bottom: 2px solid white;
+    /* 设置输入框的上下内边距是5像素，左右内边距是10像素*/
+    padding: 5px 10px;
+    /* 设置输入框背景颜色为黑色透明 */
+    background: #ffffff00;
+    /* 输入框内文字颜色为白色 */
+    color: white;
+    
+}
+/* 设置按钮样式 */
+#login-box button{
+    /* 上外边距是20像素 */
+    margin-top: 20px;
+    /* 下外边距是20像素 */
+    margin-bottom: 20px;
+    /* 宽度和输入框一样200像素 */
+    width: 200px;
+    /* 按钮高度25像素 */
+    height:25px;
+}
+/* 设置输入框边左边图标样式 */
+i{
+    /* 大小18像素 */
+    font-size: 18px;
+    /* 颜色白色 */
+    color: white;
+}

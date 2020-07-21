@@ -1,0 +1,80 @@
+
+/* 主体部分 */
+body{
+    background-color: rgb(253, 253, 255);
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+/* 用户信息 */
+.userinfo{
+    background-color: rgb(226, 236, 250);
+    overflow: hidden;
+    position: relative;
+}
+
+.viplogo{
+    float: left;
+}
+.username{
+    position: absolute;
+    font-size: 20px;
+    top: 40px;
+    margin-left: 50px;
+}
+.time{
+    font-size: 20px;
+    margin-top: 100px;
+    margin-left: 250px;
+}
+/* 中心导航选项 */
+.choice li{
+    float: left;
+    background-image: url(../images/choice.jpg);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    list-style: none;
+    margin-left: 50px;
+    padding-left: 50px;
+    font-size: 18px;
+}
+.choice li a{
+    text-decoration: none;
+    color: black;
+}
+.choice li a:hover{
+    color: cyan;
+}
+.choice li.myinfo{
+    background-position-y: 0;
+}
+.choice li.watchRecord{
+    background-position-y: -24px;
+}
+.choice li.collectRecord{
+    background-position-y: -50px;
+}
+
+/* 基本信息 */
+.msgdata .msgtable{
+    width: 100%;
+    border:2px solid cornflowerblue;
+
+}
+.msgdata .msg td{
+    text-align: left;
+    height: 50px;
+}
+.msgdata .msg td.info{
+    border-bottom: 2px solid gold;
+
+}
+
+/* 播放记录 */
+
+.msgdata #history{
+    /* border:2px solid cornflowerblue; */
+    margin-top: 50px;
+    /* height: 200px; */
+}

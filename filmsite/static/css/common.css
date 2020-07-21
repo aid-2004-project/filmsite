@@ -1,0 +1,154 @@
+body,button,div{
+    margin: 0;
+    padding: 0;
+}
+header{
+    /* 设置头部版块的背景颜色，高度100px，参照body进行左右居中*/
+    /* 启动grip布局，将头部版块按3:2:1的比例进行划分为左中右三个版块  */
+    margin: 0 auto;
+    height: 100px;
+    /* 开启grid布局 */
+    display: grid; 
+     /* 将头部版块分为三部分*/
+    grid-template-areas:
+        "advertising search btnLogin";
+    /* 指定每列的宽度  */
+    grid-template-columns: 2fr 1fr 1.5fr;
+    /* 设置间距 */
+    column-gap: 20px;
+    background-color: rgb(200, 223, 300);
+    
+}
+/* 头部导航栏样式 */
+header .guide{
+    width: 85%;
+    margin-left: 100px;
+    overflow: hidden;
+
+}
+/* 头部导航栏导航图标样式 */
+header .guide .logo{
+    float: left;
+    line-height: 100px;
+    width: 12%;
+}
+header .guide .logo img{
+    width: 100%;
+    height: 100%;
+}
+/* 头部导航栏导航文字 */
+header .guide li{
+    float: left;
+    text-align: center;
+    line-height: 95px;
+    margin: 0 25px;
+    list-style: none;
+    font-size: 20px;
+
+}
+header .guide li a{
+    text-decoration: none;
+    color: rgb(103, 103, 177);
+}
+header .guide li a:hover{
+    color:rgb(211, 116, 116);
+}
+
+/* 头部搜索框样式 */
+.search{
+    width: 250px;
+}
+.search input{
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 30px;
+    background-image: url(../images/glass.png);
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+
+/* 头部登录注册按钮样式 */
+/* 设置登录框内两个按钮的的共同样式 */
+#btnLog{
+    margin-top: 30px;
+    margin-right: 50px;
+}
+#btnLog>button{
+    /* 设置按钮宽80px，高20px ，距离父元素#head上边框下20px高度的位置显示*/
+    /* 设置按钮无边框且背景色为透明 */
+    width: 90px;
+    height: 20px;
+
+    background-color: transparent;
+    border: 0px;
+}
+
+/* 设置登录按钮的背景图标 */
+/* #btnLog button{
+    background-image: url(../images/loginbg.jpg);
+    background-repeat: no-repeat;
+} */
+#btnLog>#login{
+    /* 给登录按钮添加背景，大小是20*20，不平铺，并且显示在图标的右边 */
+    background-image: url(../images/login.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right;
+}
+
+/* 设置注销按钮的背景图标 */
+#btnLog>#logout{
+    /* 给注销按钮添加背景，大小是20*20，不平铺，并且显示在图标的右边 */
+    background-image: url(../images/logout.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right;
+}
+#btnLog>#center{
+    /* 给会员中心按钮添加背景，大小是20*20，不平铺，并且显示在图标的右边 */
+    background-image: url(../images/center.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right;
+}
+
+#btnLog button a{
+    text-decoration: none;
+    color:rgb(103, 103, 177);
+}
+#btnLog button a:hover{
+    text-decoration: none;
+    color:rgb(211, 116, 116);
+}
+
+/* 取消浮动带来的影响以及拉开与下元素的宽度 */
+.blank{
+    clear: both;
+    height: 30px;
+}
+
+
+/* 页尾部分 */
+footer{
+    height: 100px;
+    background-color:rgb(200, 223, 300);
+}
+footer li{
+    float: left;
+    line-height: 100px;
+    text-align: center;
+    padding: 0 50px;
+    margin-left:110px;
+    list-style: none;
+}
+
+footer li a{
+    text-decoration: none;
+    color:rgb(103, 103, 177);
+}
+footer li a:hover{
+    color:rgb(211, 116, 116);
+}
